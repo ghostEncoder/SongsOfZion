@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Songs Of Zion</title>
+    <!------------------- BOOTSTRAP  ------------------------------------------------>
+    <link rel="stylesheet" href="bootstrap\bootstrap-5.1.0-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="CSS\style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+    <div class="container-fluid main-container">
+         
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Songs Of Zion</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Version</a>
+                  </li>
+                </ul>
+                <span class="navbar-text">
+                  <a>Exit</a>
+                </span>
+              </div>
+            </div>
+        </nav>
+
+        
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Song input Card -->
+                <div class="card song-input-card">
+                    <div class="card-body shadow-sm">
+                        <form>
+                            <div class="mb-3">
+                              <label for="SongNumberTamil" class="form-label">Tamil Song Number</label>
+                              <input type="number" class="form-control" id="SongNumberTamil" aria-describedby="emailHelp" placeholder="Enter Tamil Song Number">
+                              <div id="emailHelp" class="form-text">Tamil Songs Range .</div>
+                            </div>
+                            <div class="div text-center">
+                                <button type="button" onclick="SubmitSongNumber()" class="btn btn-primary" id="submit-song-button">Submit</button>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Stanza input Card -->
+                <div class="card verse-input-card">
+                    <div class="card-header">
+                        Select Stanzas
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body shadow-sm">
+                        <!-- ROW 1 -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chorus">
+                                    <label class="form-check-label" for="chorus">
+                                      Chorus
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-1">
+                                    <label class="form-check-label" for="stanza-1">
+                                      Stanza 1
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW 2 -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-2">
+                                    <label class="form-check-label" for="stanza-2">
+                                      Stanza 2
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-3">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 3
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW 3 -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-4">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 4
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-5">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 5
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW 4 -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-6">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 6
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-7">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 7
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- ROW 5 -->
+                         <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-8">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 8
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-9">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 9
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- ROW 6 -->
+                         <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-9">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 9
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-10">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 10
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW 7 -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-11">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 11
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-12">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 12
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW 8 -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-13">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 13
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-14">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 14
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW 9 -->
+                        <div class="row">
+                           
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="stanza-15">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      Stanza 15
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div text-center">
+                            <button onClick="SubmitVerses()" class="btn btn-primary" id="submit-verse-button">Submit</button>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- MODALS -->
+    <div class="modal" id="error-modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">No Song Number Entered</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>No Song Number Entered!</p>
+              <p>Please Enter A Song Number Before Proceeding</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+   <script src="JS\jquery.js"></script>
+   <script src="bootstrap\bootstrap-5.1.0-dist\js\bootstrap.min.js"></script>
+   <script src="JS\main.js"></script>
+</body>
+</html>

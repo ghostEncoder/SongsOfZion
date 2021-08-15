@@ -1,0 +1,28 @@
+/* input card styping  */
+.song-input-card
+{
+    margin-top:8% ;
+    margin-left: 5%;
+}
+
+.song-input-card #submit-song-button
+{
+   width: 100%;
+}
+
+/* Verse Input Card Styling  */
+.verse-input-card
+{
+    margin-top:8% ;
+    margin-left: 5%;    
+}
+.verse-input-card .row
+{
+    margin-top:2%;
+}
+
+.verse-input-card #submit-verse-button
+{
+    margin-top:3%;
+   width: 100%;
+}
