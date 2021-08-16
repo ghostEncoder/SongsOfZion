@@ -31,11 +31,15 @@ function SubmitSongNumber()
     console.log(song_number.trim())
     eel.Search_Song(song_number)(function(ret){
         console.log(ret)
-        PrintFullSong(ret)
+        
         let response = ret
         if (response === "No_Song_Error")
         {
             $('#error-modal').modal('show'); 
+        }
+        else
+        {
+            PrintFullSong(ret)
         }
     });
    

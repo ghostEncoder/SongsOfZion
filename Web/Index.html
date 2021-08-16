@@ -9,27 +9,29 @@
     <link rel="stylesheet" href="bootstrap\bootstrap-5.1.0-dist\css\bootstrap.min.css">
     <link rel="stylesheet" href="CSS\style.css">
     <script type="text/javascript" src="/eel.js"></script>
+    <!--------------------- FONTAWESOME----------------------------------------------->
+    <link href="fontawesome\fontawesome-free-5.15.4-web\css\all.css" rel="stylesheet"> <!--load all styles -->
 </head>
 <body>
     <div class="container-fluid main-container">
          
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Songs Of Zion</a>
+              <a class="navbar-brand" href="#"><i class="fas fa-music"></i> Songs Of Zion</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                  <li class="nav-item mt-2">
+                    <a class="nav-link" href="#"><i class="fas fa-question"></i> About</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Version</a>
+                  <li class="nav-item mt-2">
+                    <a class="nav-link" href="#"><i class="fas fa-info"></i> Version</a>
                   </li>
                 </ul>
                 <span class="navbar-text">
-                  <a>Exit</a>
+                  <a href="#"><i class="fas fa-door-open"></i> Exit</a>
                 </span>
               </div>
             </div>
@@ -48,7 +50,7 @@
                               <div id="emailHelp" class="form-text">Tamil Songs Range .</div>
                             </div>
                             <div class="div text-center">
-                                <button type="button" onclick="SubmitSongNumber()" class="btn btn-primary" id="submit-song-button">Submit</button>
+                                <button type="button" onclick="SubmitSongNumber()" class="btn btn-primary" id="submit-song-button"><i class="fas fa-arrow-right"></i> Submit</button>
                             </div>
                           </form>
                     </div>
@@ -59,7 +61,7 @@
                       <!-- Stanza input Card -->
                       <div class="card verse-input-card">
                           <div class="card-header">
-                              Select Stanzas
+                            <i class="fas fa-align-left"></i> Select Stanzas
                           </div>
                           <!-- Card Body -->
                           <div class="card-body shadow-sm">
@@ -228,7 +230,7 @@
                                   </div>
                               </div>
                               <div class="div text-center">
-                                  <button onClick="SubmitVerses()" class="btn btn-primary" id="submit-verse-button">Submit</button>
+                                  <button onClick="SubmitVerses()" class="btn btn-primary" id="submit-verse-button"><i class="fas fa-arrow-right"></i> Submit</button>
                               </div>   
                           </div>
                       </div>
@@ -239,7 +241,7 @@
             <div class="col-md-4">
                 <div class="card final-output-card">
                   <div class="card-header text-center">
-                  <h3>Final Output</h3> 
+                  <h3><i class="fas fa-book"></i> Final Output</h3> 
                   </div>
                   <div class="card-body shadow-sm">
                     <div class="form-floating">
@@ -252,7 +254,7 @@
             <div class="col-md-4">
                 <div class="card full-output-card">
                   <div class="card-header text-center">
-                  <h3>Full Song</h3> 
+                  <h3><i class="fas fa-book-medical"></i> Full Song</h3> 
                   </div>
                   <div class="card-body shadow-sm">
                     <div class="form-floating">
@@ -268,10 +270,10 @@
     </div>
     <!-- MODALS -->
     <div class="modal" id="error-modal" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">No Song Number Entered</h5>
+              <h5 class="modal-title"><i class="fas fa-ban"></i> No Song Number Entered</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
