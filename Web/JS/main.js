@@ -1,9 +1,37 @@
+function ClearFullOutputTextBoxes()
+{
+    $("#FullOutputTextArea").val('');
+}
+
+
+//Function to print full song preview
+function PrintFullSong(Song)
+{   
+    ClearFullOutputTextBoxes()
+    //Iterater through full song
+    console.log("INIDE PRINT FULL SONG")
+    Song.forEach(function(value)
+    {
+        console.log(value)
+        //iterate thorugh each verse
+        value.forEach(function(verses)
+        {
+            //keep appending verses
+            $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+verses);
+        })
+         //add newline
+        $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+"\n");
+    })
+}
+
+//Function to submit song
 function SubmitSongNumber()
 {
     var song_number = document.getElementById("SongNumberTamil").value;
     console.log(song_number.trim())
     eel.Search_Song(song_number)(function(ret){
         console.log(ret)
+        PrintFullSong(ret)
         let response = ret
         if (response === "No_Song_Error")
         {
@@ -14,6 +42,7 @@ function SubmitSongNumber()
     
 }
 
+//Function to submit verses
 function SubmitVerses()
 {
     var stanzas=[]

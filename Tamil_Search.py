@@ -30,7 +30,8 @@ def SearchSong(song_no):
     if len(song_no)>0:
         print("finding song",song_no)
         song=open(songs_path+str(song_no)+".txt","r",encoding="utf-8")
-        SplitSong(song)
+        response = SplitSong(song)
+        return response
     else:
 
         return "No_Song_Error"
@@ -87,7 +88,8 @@ def SplitSong(song):
         if "s15." in i:
             print("Stanza 15", i)
             CombinedArrays[15].append(i)
-
+    fw.ClearFiles()
+    return CombinedArrays
     #GetVersesToBePrinted(CombinedArrays)
 
 def GetVersesToBePrinted(VersesToBeDisplayed):
