@@ -1,9 +1,58 @@
-function ClearFullOutputTextBoxes()
+//Function to open about modal
+function OpenAboutModal()
 {
-    $("#FullOutputTextArea").val('');
+    $('#about-modal').modal('show'); 
 }
 
+//Function to open version modal
+function OpenVersionModal()
+{
+    $('#version-modal').modal('show'); 
+}
 
+//Function to reset everything
+function Reset()
+{
+    eel.Reset();
+    location.reload()
+}
+
+// Function To Close the App
+function Exit()
+{
+    eel.Exit()
+    window.close()
+}
+
+//function to clear full output
+function ClearFullOutputTextBoxes()
+{
+    $("#FullOutputTextArea").val('')
+}
+
+//function to clear final output 
+function ClearFinalOutputTextBox()
+{
+    $("textarea#FinalOutputTextArea").val('')
+}
+
+//Function to print final song
+function PrintFinalOutput(Song)
+{
+    ClearFinalOutputTextBox()
+    console.log("INIDE PRINT FIBAL SONG")
+    Song.forEach(function(value)
+    {   
+        console.log(value)
+        value.forEach(function(verse)
+        {
+            console.log(verse)
+            $("textarea#FinalOutputTextArea").val( $("textarea#FinalOutputTextArea").val()+verse)
+        })
+        $("textarea#FinalOutputTextArea").val( $("textarea#FinalOutputTextArea").val()+"\n")
+    })
+
+}
 //Function to print full song preview
 function PrintFullSong(Song)
 {   
@@ -17,7 +66,7 @@ function PrintFullSong(Song)
         value.forEach(function(verses)
         {
             //keep appending verses
-            $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+verses);
+            $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+verses);       
         })
          //add newline
         $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+"\n");
@@ -35,7 +84,11 @@ function SubmitSongNumber()
         let response = ret
         if (response === "No_Song_Error")
         {
-            $('#error-modal').modal('show'); 
+            $('#no-song-entered-error-modal').modal('show'); 
+        }
+        if (response === "Out_Of_Range_Error")
+        {
+            $('#out-of-range-error-modal').modal('show'); 
         }
         else
         {
@@ -50,6 +103,7 @@ function SubmitSongNumber()
 function SubmitVerses()
 {
     var stanzas=[]
+    
     if(document.getElementById("chorus").checked)
     {
         stanzas.push(0);
@@ -114,5 +168,15 @@ function SubmitVerses()
     {
         stanzas.push(12);
     }
-    eel.GetVersesToBePrinted(stanzas)
+    
+    //calling python function to get the stanzas
+    eel.GetVersesToBePrinted(stanzas)(function(value)
+    {
+        console.log(value)
+       
+        
+            PrintFinalOutput(value)
+        
+       
+    })
 }

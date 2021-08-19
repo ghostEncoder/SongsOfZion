@@ -24,14 +24,14 @@
               <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item mt-2">
-                    <a class="nav-link" href="#"><i class="fas fa-question"></i> About</a>
+                    <a class="nav-link" href="#" onClick="OpenAboutModal()"><i class="fas fa-question"></i> About</a>
                   </li>
                   <li class="nav-item mt-2">
-                    <a class="nav-link" href="#"><i class="fas fa-info"></i> Version</a>
+                    <a class="nav-link" href="#" onClick="OpenVersionModal()"><i class="fas fa-info"></i> Version</a>
                   </li>
                 </ul>
                 <span class="navbar-text">
-                  <a href="#"><i class="fas fa-door-open"></i> Exit</a>
+                  <a href="#" onClick="Exit()"><i class="fas fa-door-open"></i> Exit</a>
                 </span>
               </div>
             </div>
@@ -47,11 +47,14 @@
                             <div class="mb-3">
                               <label for="SongNumberTamil" class="form-label">Tamil Song Number</label>
                               <input type="number" class="form-control" id="SongNumberTamil" aria-describedby="emailHelp" placeholder="Enter Tamil Song Number">
-                              <div id="emailHelp" class="form-text">Tamil Songs Range .</div>
+                              <div id="emailHelp" class="form-text">Tamil Songs Range 1-2011.</div>
                             </div>
                             <div class="div text-center">
                                 <button type="button" onclick="SubmitSongNumber()" class="btn btn-primary" id="submit-song-button"><i class="fas fa-arrow-right"></i> Submit</button>
                             </div>
+                            <div class="div text-center">
+                              <button type="button" onclick="Reset()" class="btn btn-danger" id="reset-song-button"><i class="fas fa-sync-alt"></i> Reset</button>
+                          </div>
                           </form>
                     </div>
                 </div>
@@ -230,7 +233,7 @@
                                   </div>
                               </div>
                               <div class="div text-center">
-                                  <button onClick="SubmitVerses()" class="btn btn-primary" id="submit-verse-button"><i class="fas fa-arrow-right"></i> Submit</button>
+                                  <button type="button" onClick="SubmitVerses()" class="btn btn-primary" id="submit-verse-button"><i class="fas fa-arrow-right"></i> Submit</button>
                               </div>   
                           </div>
                       </div>
@@ -245,12 +248,12 @@
                   </div>
                   <div class="card-body shadow-sm">
                     <div class="form-floating">
-                      <textarea class="form-control" placeholder="Leave a comment here" id="FinalOutputTextArea" style="height: 550px"></textarea>
+                      <textarea class="form-control"  id="FinalOutputTextArea" style="height: 550px"></textarea>
                     </div>
                   </div>
                 </div>
-            <!-- FULL PREVIEW -->
             </div>
+              <!-- FULL PREVIEW -->
             <div class="col-md-4">
                 <div class="card full-output-card">
                   <div class="card-header text-center">
@@ -258,7 +261,7 @@
                   </div>
                   <div class="card-body shadow-sm">
                     <div class="form-floating">
-                      <textarea class="form-control" placeholder="Leave a comment here" id="FullOutputTextArea" style="height: 550px"></textarea>   
+                      <textarea class="form-control"  id="FullOutputTextArea" style="height: 550px"></textarea>   
                     </div>
                   </div>
                 </div>
@@ -269,7 +272,9 @@
 
     </div>
     <!-- MODALS -->
-    <div class="modal" id="error-modal" tabindex="-1">
+
+    <!-- NO SONG ENTERED MODAL -->
+    <div class="modal" id="no-song-entered-error-modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -281,12 +286,66 @@
               <p>Please Enter A Song Number Before Proceeding</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Close</button>
             </div>
           </div>
         </div>
       </div>
-    
+
+      <!-- OUT OF RANGE SONG MODAL -->
+      <div class="modal" id="out-of-range-error-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><i class="fas fa-ban"></i> Song Number Out Of Range</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Song Number Out Of Range!</p>
+              <p>Please Enter A Song Within Range</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- ABOUT MODAL -->
+    <div class="modal" id="about-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-question-circle"></i> About</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Songs Of Zion For Tamil</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERSION MODAL -->
+    <div class="modal" id="version-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-info-circle"></i> Version</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>V.1.0</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
    <script src="JS\jquery.js"></script>
    <script src="bootstrap\bootstrap-5.1.0-dist\js\bootstrap.min.js"></script>
    <script src="JS\main.js"></script>

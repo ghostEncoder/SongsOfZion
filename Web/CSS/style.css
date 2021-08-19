@@ -10,6 +10,12 @@
    width: 100%;
 }
 
+.song-input-card #reset-song-button
+{
+    width: 100%;
+    margin-top: 2%;
+}
+
 /* Verse Input Card Styling  */
 .verse-input-card
 {

@@ -24,14 +24,26 @@ def ClearArrays():
     for i in CombinedArrays:
         i.clear()
 
+def ConvertToThreeDigit(Song_No):
+    if len(Song_No) == 1:
+        Song_No='0'+'0'+Song_No
+    elif len(Song_No) == 2:
+        Song_No = '0' + Song_No
+    else:
+        Song_No = Song_No
+    return Song_No
 
 # Function To Search Song s
-def SearchSong(song_no):
-    if len(song_no)>0:
-        print("finding song",song_no)
-        song=open(songs_path+str(song_no)+".txt","r",encoding="utf-8")
-        response = SplitSong(song)
-        return response
+def SearchSong(Song_No):
+    if len(Song_No)>0:
+        if int(Song_No) < 0 or int(Song_No) > 2011:
+            return "Out_Of_Range_Error"
+        else:
+            Song_No=ConvertToThreeDigit(Song_No)
+            print("finding song",Song_No)
+            song=open(songs_path+str(Song_No)+".txt","r",encoding="utf-8")
+            response = SplitSong(song)
+            return response
     else:
 
         return "No_Song_Error"
@@ -96,7 +108,8 @@ def GetVersesToBePrinted(VersesToBeDisplayed):
     #verse_to_be_displayed = input("enter stanza to display")
     #verse_to_be_displayed = verse_to_be_displayed.split(" ")
     # function to write song into output file
-    fw.WriteToFile(CombinedArrays, VersesToBeDisplayed)
+    response = fw.WriteToFile(CombinedArrays, VersesToBeDisplayed)
+    return response
 
 
 
