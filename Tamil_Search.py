@@ -36,7 +36,7 @@ def ConvertToThreeDigit(Song_No):
 # Function To Search Song s
 def SearchSong(Song_No):
     if len(Song_No)>0:
-        if int(Song_No) < 0 or int(Song_No) > 2011:
+        if int(Song_No) < 1 or int(Song_No) > 2011:
             return "Out_Of_Range_Error"
         else:
             Song_No=ConvertToThreeDigit(Song_No)

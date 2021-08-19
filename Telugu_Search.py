@@ -20,10 +20,12 @@ s14=[]
 s15=[]
 CombinedArrays=[chorus,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15]
 
+#Function To Clear All Arrays
 def ClearArrays():
     for i in CombinedArrays:
         i.clear()
 
+#Function to convert to 3 digit song number
 def ConvertToThreeDigit(Song_No):
     if len(Song_No) == 1:
         Song_No='0'+'0'+Song_No
@@ -33,10 +35,10 @@ def ConvertToThreeDigit(Song_No):
         Song_No = Song_No
     return Song_No
 
-# Function To Search Song s
+# Function To Search Songs
 def SearchSong(Song_No):
     if len(Song_No)>0:
-        if int(Song_No) < 0 or int(Song_No) > 818:
+        if int(Song_No) < 1 or int(Song_No) > 818:
             return "Out_Of_Range_Error"
         else:
             Song_No=ConvertToThreeDigit(Song_No)

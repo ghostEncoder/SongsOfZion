@@ -12,7 +12,7 @@ def ClearFiles():
 
 
 def WriteToFile(CombinedArrays,VersesToBePrinted):
-    SelectedStanzasArrayTamil = []
+    SelectedStanzasArray = []
     #Clear Files Before Writing
     ClearFiles()
     #Open FIle
@@ -25,14 +25,14 @@ def WriteToFile(CombinedArrays,VersesToBePrinted):
                     #CombinedArrays[i][-1]=CombinedArrays[i][-1].strip()
                     FinalSong.writelines(CombinedArrays[i][:-1])
                     FinalSong.write(CombinedArrays[i][-1][:-1])
-                    SelectedStanzasArrayTamil.append(CombinedArrays[i])
+                    SelectedStanzasArray.append(CombinedArrays[i])
                 else:
                     FinalSong.writelines(CombinedArrays[i])
-                    SelectedStanzasArrayTamil.append(CombinedArrays[i])
+                    SelectedStanzasArray.append(CombinedArrays[i])
                 if (index != VersesToBePrintedLength-1):
                     FinalSong.write("\n")
 
-    return SelectedStanzasArrayTamil
+    return SelectedStanzasArray
 
 
 
