@@ -42,6 +42,10 @@ def SearchSong(Song_No):
             Song_No=ConvertToThreeDigit(Song_No)
             print("finding song",Song_No)
             song=open(songs_path+str(Song_No)+".txt","r",encoding="utf-8")
+            #Write Tamil Song Number
+            TamilSongFile = open("Outputs//TamilSongNo.txt", "w")
+            TamilSongFile.write(Song_No)
+            TamilSongFile.close()
             response = SplitSong(song)
             return response
     else:
@@ -57,49 +61,50 @@ def SplitSong(song):
             CombinedArrays[0].append(i)
         if "s1." in i:
             print("Stanza 1", i)
-            CombinedArrays[1].append(i)
+            CombinedArrays[1].append(i.replace("s",""))
         if "s2." in i:
             print("Stanza 2", i)
-            CombinedArrays[2].append(i)
+            CombinedArrays[2].append(i.replace("s",""))
         if "s3." in i:
             print("Stanza 3", i)
-            CombinedArrays[3].append(i)
+            CombinedArrays[3].append(i.replace("s",""))
         if "s4." in i:
             print("Stanza 4", i)
-            CombinedArrays[4].append(i)
+            CombinedArrays[4].append(i.replace("s",""))
         if "s5." in i:
             print("Stanza 5", i)
-            CombinedArrays[5].append(i)
+            CombinedArrays[5].append(i.replace("s",""))
         if "s6." in i:
             print("Stanza 6", i)
-            CombinedArrays[6].append(i)
+            CombinedArrays[6].append(i.replace("s",""))
         if "s7." in i:
             print("Stanza 7", i)
-            CombinedArrays[7].append(i)
+            CombinedArrays[7].append(i.replace("s",""))
         if "s8." in i:
             print("Stanza 8", i)
-            CombinedArrays[8].append(i)
+            CombinedArrays[8].append(i.replace("s",""))
         if "s9." in i:
             print("Stanza 9", i)
-            CombinedArrays[9].append(i)
+            CombinedArrays[9].append(i.replace("s",""))
         if "s10." in i:
             print("Stanza 10", i)
-            CombinedArrays[10].append(i)
+            CombinedArrays[10].append(i.replace("s",""))
         if "s11." in i:
             print("Stanza 11", i)
-            CombinedArrays[11].append(i)
+            CombinedArrays[11].append(i.replace("s",""))
         if "s12." in i:
             print("Stanza 12", i)
-            CombinedArrays[12].append(i)
+            CombinedArrays[12].append(i.replace("s",""))
         if "s13." in i:
             print("Stanza 13", i)
-            CombinedArrays[13].append(i)
+            CombinedArrays[13].append(i.replace("s",""))
         if "s14." in i:
             print("Stanza 14", i)
-            CombinedArrays[14].append(i)
+            CombinedArrays[14].append(i.replace("s",""))
         if "s15." in i:
             print("Stanza 15", i)
-            CombinedArrays[15].append(i)
+            CombinedArrays[15].append(i.replace("s",""))
+
     fw.ClearFiles()
     return CombinedArrays
     #GetVersesToBePrinted(CombinedArrays)

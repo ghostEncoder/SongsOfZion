@@ -1,12 +1,15 @@
 
-Song_Destination="C://Users//jedidiah//Documents//pycharmProjects_OLD//pycharmProjects//Alpha" \
-                 "//Songs_Of_Zion_Tamil_V1.0//Outputs//FinalSong.txt"
+Song_Destination="Outputs//FinalSong.txt"
 
-
+def ClearSongFiles():
+    # Clear Tamil Song Number File
+    TamilSongFile = open("Outputs//TamilSongNo.txt", "w")
+    TamilSongFile.truncate(0)
 
 def ClearFiles():
     FinalSong = open(Song_Destination, "w", encoding="utf-8")
     FinalSong.truncate(0)
+
 
 def WriteToFile(CombinedArrays,VersesToBePrinted):
     SelectedStanzasArrayTamil = []

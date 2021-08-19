@@ -24,11 +24,12 @@ def GetVersesToBePrinted(VersesToBeDisplayed):
 def Reset():
     ts.ClearArrays()
     fw.ClearFiles()
+    fw.ClearSongFiles()
 
 # Function To Exit Application
 @eel.expose
 def Exit():
     sys.exit(0)
 
-eel.init('web')
-eel.start('Index.html')
+eel.init('Web')
+eel.start('Index.html',port=8081)
