@@ -5,6 +5,12 @@ def ClearSongFiles():
     # Clear Tamil Song Number File
     TamilSongFile = open("Outputs//TamilSongNo.txt", "w")
     TamilSongFile.truncate(0)
+    TamilSongFile.close()
+
+    #CLEAR TELUGU SONG FILES
+    TeluguSongNoFile = open("Outputs/TeluguSongNo.txt", "w", encoding="utf-8")
+    TeluguSongNoFile.truncate(0)
+    TeluguSongNoFile.close()
 
 def ClearFiles():
     FinalSong = open(Song_Destination, "w", encoding="utf-8")

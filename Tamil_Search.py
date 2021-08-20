@@ -20,6 +20,7 @@ s14=[]
 s15=[]
 CombinedArrays=[chorus,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15]
 
+#Clear all variable arrays
 def ClearArrays():
     for i in CombinedArrays:
         i.clear()
@@ -33,6 +34,12 @@ def ConvertToThreeDigit(Song_No):
         Song_No = Song_No
     return Song_No
 
+# WRITE ~~~ INCASE OF NO TAMIL SONG NUMBER
+def WriteEmptySongNumber():
+    # WRITE SONG NUMBER
+    SongNoFile = open("Outputs/TamilSongNo.txt", "w", encoding="utf-8")
+    SongNoFile.write("~~~")
+    SongNoFile.close()
 # Function To Search Song s
 def SearchSong(Song_No):
     if len(Song_No)>0:
@@ -52,9 +59,11 @@ def SearchSong(Song_No):
 
         return "No_Song_Error"
 
+
 # Function To Split Song
 def SplitSong(song):
     ClearArrays()
+    global CombinedArrays
     for i in song:
         if "c" in i:
             print("Chorus",i)
@@ -110,8 +119,6 @@ def SplitSong(song):
     #GetVersesToBePrinted(CombinedArrays)
 
 def GetVersesToBePrinted(VersesToBeDisplayed):
-    #verse_to_be_displayed = input("enter stanza to display")
-    #verse_to_be_displayed = verse_to_be_displayed.split(" ")
     # function to write song into output file
     response = fw.WriteToFile(CombinedArrays, VersesToBeDisplayed)
     return response

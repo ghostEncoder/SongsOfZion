@@ -20,7 +20,8 @@
 .verse-input-card
 {
     margin-top:8% ;
-    margin-left: 5%;    
+    margin-left: 5%;  
+    margin-bottom: 5%;  
 }
 .verse-input-card .row
 {
@@ -29,18 +30,18 @@
 
 .verse-input-card #submit-verse-button
 {
-    margin-top:3%;
+   margin-top:3%;
    width: 100%;
 }
 
 /* FINAL OUTPUT CARD STYLING */
 .final-output-card
 {
-    margin-top: 5%; 
+    margin-top: 6%; 
 }
 
 /* FULL OUTPUT CARD */
 .full-output-card
 {
-    margin-top: 5%;
+    margin-top: 6%;
 }

@@ -20,12 +20,13 @@ function Reset()
 // Function To Close the App
 function Exit()
 {
-    eel.Exit()
     window.close()
+    eel.Exit()
+    
 }
 
 //function to clear full output
-function ClearFullOutputTextBoxes()
+function ClearFullOutputTextBox()
 {
     $("#FullOutputTextArea").val('')
 }
@@ -56,7 +57,8 @@ function PrintFinalOutput(Song)
 //Function to print full song preview
 function PrintFullSong(Song)
 {   
-    ClearFullOutputTextBoxes()
+    ClearFullOutputTextBox()
+    ClearFinalOutputTextBox()
     //Iterater through full song
     console.log("INIDE PRINT FULL SONG")
     Song.forEach(function(value)
@@ -65,8 +67,11 @@ function PrintFullSong(Song)
         //iterate thorugh each verse
         value.forEach(function(verses)
         {
-            //keep appending verses
-            $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+verses);       
+            if(verses.length > 0)
+            {
+                //keep appending verses
+                $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+verses); 
+            }      
         })
          //add newline
         $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+"\n");
@@ -76,9 +81,22 @@ function PrintFullSong(Song)
 //Function to submit song
 function SubmitSongNumber()
 {
-    var song_number = document.getElementById("SongNumberTamil").value;
-    console.log(song_number.trim())
-    eel.Search_Song(song_number)(function(ret){
+    song_numbers=[]
+    var tamil_song_number = document.getElementById("SongNumberTamil").value;
+    var telugu_song_number = document.getElementById("SongNumberTelugu").value;
+    console.log(tamil_song_number.trim())
+    console.log(telugu_song_number.trim())
+
+    if (tamil_song_number.length > 0)
+    {
+        song_numbers.push("TA:"+tamil_song_number)
+    }
+    if (telugu_song_number.length > 0)
+    {
+        song_numbers.push("TE:"+telugu_song_number)
+    }
+
+    eel.Search_Song(song_numbers)(function(ret){
         console.log(ret)
         
         let response = ret
