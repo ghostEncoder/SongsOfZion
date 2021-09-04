@@ -84,8 +84,11 @@ function SubmitSongNumber()
     song_numbers=[]
     var tamil_song_number = document.getElementById("SongNumberTamil").value;
     var telugu_song_number = document.getElementById("SongNumberTelugu").value;
+    var hindi_song_number = document.getElementById("SongNumberHindi").value;
+
     console.log(tamil_song_number.trim())
     console.log(telugu_song_number.trim())
+    console.log(hindi_song_number.trim())
 
     if (tamil_song_number.length > 0)
     {
@@ -94,6 +97,10 @@ function SubmitSongNumber()
     if (telugu_song_number.length > 0)
     {
         song_numbers.push("TE:"+telugu_song_number)
+    }
+    if (hindi_song_number.length > 0)
+    {
+        song_numbers.push("HE:"+hindi_song_number)
     }
 
     eel.Search_Song(song_numbers)(function(ret){
