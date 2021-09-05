@@ -65,7 +65,7 @@ def SearchSong(Song_No):
 
 def WriteHindiTitle(Song_Title):
     title = open("Outputs//HindiTitle.txt", "w",encoding="utf-8")
-    title.write(Song_Title[0])
+    title.write(Song_Title[0].strip())
     title.close()
 
 # Function To Split Song
