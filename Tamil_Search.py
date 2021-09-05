@@ -1,5 +1,5 @@
 import FileWriter as fw
-songs_path="C://Users//jedidiah//Documents//pycharmProjects_OLD//pycharmProjects//Alpha//Songs_Of_Zion_Tamil_V1.0//Tamil_Songs//"
+songs_path="Tamil_Songs//"
 
 #Variables
 chorus=[]
