@@ -62,7 +62,7 @@ def AutoFillHindiSongNumber(song):
 #FUNCTION WHICH CALLS AUTOFILL FOR TELUGU WHEN HINDI SONG IS PROVIDED
 @eel.expose
 def AutoFillTeluguSongNumber(song):
-    TeluguSong = af.findHindi(song)
+    TeluguSong = af.findTelugu(song)
     return TeluguSong
 
 #Function To Get Stanzas To Be Printed

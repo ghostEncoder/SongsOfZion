@@ -86,7 +86,7 @@ function AutoFill()
     //FIND TELUGU SONG IF HINDI SONG IS PRESENT
     if (hindi_song_number.length > 0)
     {
-        response = eel.AutoFillHindiSongNumber(hindi_song_number)(function(TeluguSongNumber)
+        response = eel.AutoFillTeluguSongNumber(hindi_song_number)(function(TeluguSongNumber)
         {
             console.log(TeluguSongNumber)
             $("#SongNumberTelugu").val(TeluguSongNumber)
@@ -96,7 +96,7 @@ function AutoFill()
     
     else if (telugu_song_number.length > 0)
     {
-       response = eel.AutoFillTeluguSongNumber(telugu_song_number)(function(HindiSongNumber)
+       response = eel.AutoFillHindiSongNumber(telugu_song_number)(function(HindiSongNumber)
         {
             $("#SongNumberHindi").val(HindiSongNumber)
         })
