@@ -77,7 +77,32 @@ function PrintFullSong(Song)
         $("#FullOutputTextArea").val($("#FullOutputTextArea").val()+"\n");
     })
 }
+//Function for Autofill
+function AutoFill()
+{
+    var hindi_song_number = document.getElementById("SongNumberHindi").value;
+    var telugu_song_number = document.getElementById("SongNumberTelugu").value;
 
+    //FIND TELUGU SONG IF HINDI SONG IS PRESENT
+    if (hindi_song_number.length > 0)
+    {
+        response = eel.AutoFillHindiSongNumber(hindi_song_number)(function(TeluguSongNumber)
+        {
+            console.log(TeluguSongNumber)
+            $("#SongNumberTelugu").val(TeluguSongNumber)
+        })
+       
+    }
+    
+    else if (telugu_song_number.length > 0)
+    {
+       response = eel.AutoFillTeluguSongNumber(telugu_song_number)(function(HindiSongNumber)
+        {
+            $("#SongNumberHindi").val(HindiSongNumber)
+        })
+       console.log(response)
+    }
+}
 //Function to submit song
 function SubmitSongNumber()
 {

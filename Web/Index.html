@@ -59,8 +59,15 @@
                               <input type="number" class="form-control" id="SongNumberTamil" aria-describedby="emailHelp" placeholder="Enter Tamil Song Number" disabled>
                               <div id="emailHelp" class="form-text">Tamil Songs Range 01-2011</div>
                             </div>
-                            <div class="div text-center">
-                                <button type="button" onclick="SubmitSongNumber()" class="btn btn-primary" id="submit-song-button"><i class="fas fa-arrow-right"></i> Submit</button>
+                            <div class="div">
+                              <div class="row text-center">
+                                <div class="col-md-6 text-center">
+                                  <button type="button" onclick="AutoFill()" class="btn btn-success" id="submit-song-button"><i class="fas fa-magic"></i> Auto Fill</button>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                  <button type="button" onclick="SubmitSongNumber()" class="btn btn-primary" id="submit-song-button"><i class="fas fa-arrow-right"></i> Submit</button>
+                                </div>
+                              </div>
                             </div>
                             <div class="div text-center">
                               <button type="button" onclick="Reset()" class="btn btn-danger" id="reset-song-button"><i class="fas fa-sync-alt"></i> Reset</button>

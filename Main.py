@@ -5,6 +5,7 @@ import Tamil_Search as ts
 import Combiner as cm
 import Telugu_Search as te
 import Hindi_Search as hs
+import AutoFill as af
 #Variables
 CombinedResponse=[]
 
@@ -51,8 +52,18 @@ def Search_Song(song_number):
         CombinedResponse = cm.CombineArrays(response_hindi, response_telugu)
         return CombinedResponse
 
+#FUNCTION WHICH CALLS AUTOFILL FOR HINDI WHEN TELUGU SONG IS PROVIDED
+@eel.expose
+def AutoFillHindiSongNumber(song):
+    HindiSong = af.findHindi(song)
+    print(HindiSong)
+    return HindiSong
 
-
+#FUNCTION WHICH CALLS AUTOFILL FOR TELUGU WHEN HINDI SONG IS PROVIDED
+@eel.expose
+def AutoFillTeluguSongNumber(song):
+    TeluguSong = af.findHindi(song)
+    return TeluguSong
 
 #Function To Get Stanzas To Be Printed
 @eel.expose
@@ -78,7 +89,8 @@ def Reset():
 def Exit():
     sys.exit(0)
 
-
-#start eel on 8081 port
+#POPULATE THE VARIABLES FOR AUTOFILL
+af.start()
+#start eel on 9999 port
 eel.init('Web')
 eel.start('Index.html',port=9999)
