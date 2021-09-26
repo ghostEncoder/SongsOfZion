@@ -79,7 +79,7 @@ def SplitSong(song):
         if "V:" in i:
             print(i.replace("V:", ""))
             Hindi_Song_Title.append(i.replace("V:", ""))
-        if "c" in i:
+        if "c:" in i:
             print("Chorus",i)
             CombinedArrays[0].append(i)
         if "s1." in i:

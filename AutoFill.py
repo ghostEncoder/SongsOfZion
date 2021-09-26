@@ -25,4 +25,3 @@ def findHindi(songNo):
         return mapListTelugu[songNo]
     except KeyError:
         return ''
-
